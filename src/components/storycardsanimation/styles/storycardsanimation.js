@@ -7,6 +7,11 @@ export const StoryCardsAnimationItem = styled.article`
 padding: 2.5em;
 border-bottom: 8px solid #222222;
 text-align: center;
+
+@media(min-width: 760px) {
+  padding: 5em 2.5em;
+  text-align: left;
+}
 `
 
 export const StoryCardsAnimationSubItem = styled.div`
@@ -24,7 +29,6 @@ margin: 0 auto;
 export const StoryCardsAnimationPane = styled.div`
   @media (min-width: 760px) {
     width: 50%;
-    padding: 1em;
   }
 `;
 
@@ -38,11 +42,17 @@ margin-bottom: .5em;
 `
 export const StoryCardsAnimationSubTitle = styled.h3`
   color: #ffffff;
-  font-weight: 500;
+  font-weight: 400;
+  max-width: 100%;
   @media (min-width: 760px) {
-    font-size: 1.5em;
+    font-size: 1.6em;
   }
 `;
 export const StoryCardsAnimationImage = styled.img`
-max-width: 100%;
+  max-width: 100%;
+  @media (min-width: 760px) {
+    max-width: calc(100% - 100px);
+    margin-left: ${({ left }) => left};
+    margin-right: ${({ right }) => right};
+  }
 `;

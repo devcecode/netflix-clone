@@ -62,7 +62,12 @@ const StoryCardsAnimation = () => {
                   </StoryCardsAnimationSubTitle>
                 </StoryCardsAnimationPane>
                 <StoryCardsAnimationPane>
-                  <StoryCardsAnimationImage src={d.image} loading="lazy" />
+                  <StoryCardsAnimationImage src={d.image} loading="lazy" left={
+                    d.direction === 'row' ? '100px' : '0px'
+                  } 
+                  right={
+                    d.direction === 'row' ? '0px' : '100px'
+                  }/>
                 </StoryCardsAnimationPane>
               </StoryCardsAnimationSubItem>
             </StoryCardsAnimationItem>
