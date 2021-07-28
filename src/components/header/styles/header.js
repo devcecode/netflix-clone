@@ -8,6 +8,7 @@ export const HeaderStyled = styled.div`
   /* background-color: #333333; */
   position: relative;
   z-index: 100;
+  max-height: 90px;
 
   @media (min-width: 550px) {
     padding: 0 2em;
@@ -28,7 +29,7 @@ export const HeaderLeftLogo = styled.img`
   }
 
   @media (min-width: 1400px) {
-    width: 190px;
+    width: 200px;
   }
 `;
 
@@ -37,6 +38,7 @@ export const HeaderLeftLogo = styled.img`
 export const HeaderRight = styled.div`
 display: flex;
 align-items: center;
+margin-right: 1em;
 `
 
 export const HeaderLanguageContainer = styled.div`
@@ -51,13 +53,20 @@ export const DropDownVisible = styled.div`
 display: flex;
 align-items: center;
 justify-content: space-between;
-padding: .2em;
-border-radius: .2em;
-border: 1px solid #ffffff;
+padding: .2em .5em;
+border-radius: .1em;
+border: 1px solid #aaaaaa;
+@media(min-width: 760px) {
+  height: 35px;
+  padding: 0 .5em;
+}
 `
 
 export const HeaderSignInContainer = styled.div`
 margin-left: 1em;
+@media(min-width: 1100px) {
+  margin-left: 2em;
+}
 `
 
 export const HeaderSignInButton = styled.a`
@@ -68,4 +77,12 @@ export const HeaderSignInButton = styled.a`
   color: #ffffff;
   font-size: 0.9em;
   display: block;
+  @media (min-width: 760px) {
+    font-size: 1em;
+    min-width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+  }
 `;

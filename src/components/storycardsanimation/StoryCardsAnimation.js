@@ -15,75 +15,60 @@ import watch_and_download from "../../images/watch_and_download.jpg";
 import watch_on_drive from "../../images/watch_on_drive.jpg";
 import kids from "../../images/kids.png";
 
+const data = [
+  {
+    title: "Enjoy on your TV.",
+    subtitle:
+      "Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.",
+    image: watchtv,
+    direction: "row",
+  },
+  {
+    title: "Download your shows to watch offline.",
+    subtitle: "Save your favorites easily and always have something to watch.",
+    image: watch_and_download,
+    direction: "row-reverse",
+  },
+  {
+    title: "Watch everywhere.",
+    subtitle:
+      "Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more.",
+    image: watch_on_drive,
+    direction: "row",
+  },
+  {
+    title: "Create profiles for kids.",
+    subtitle:
+      "Send kids on adventures with their favorite characters in a space made just for them—free with your membership.",
+    image: kids,
+    direction: "row-reverse",
+  },
+];
+
 const StoryCardsAnimation = () => {
   return (
     <StoryCardsAnimationStyled>
-      <StoryCardsAnimationItem>
-        <StoryCardsAnimationSubItem direction="row">
-          <StoryCardsAnimationPane>
-            <StoryCardsAnimationTitle>
-              Enjoy on your TV.
-            </StoryCardsAnimationTitle>
-            <StoryCardsAnimationSubTitle>
-              Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV,
-              Blu-ray players, and more.
-            </StoryCardsAnimationSubTitle>
-          </StoryCardsAnimationPane>
-          <StoryCardsAnimationPane>
-            <StoryCardsAnimationImage src={watchtv} loading="lazy" />
-          </StoryCardsAnimationPane>
-        </StoryCardsAnimationSubItem>
-      </StoryCardsAnimationItem>
-
-      <StoryCardsAnimationItem>
-        <StoryCardsAnimationSubItem direction="row-reverse">
-          <StoryCardsAnimationPane>
-            <StoryCardsAnimationTitle>
-              Download your shows to watch offline.
-            </StoryCardsAnimationTitle>
-            <StoryCardsAnimationSubTitle>
-              Save your favorites easily and always have something to watch.
-            </StoryCardsAnimationSubTitle>
-          </StoryCardsAnimationPane>
-          <StoryCardsAnimationPane>
-            <StoryCardsAnimationImage src={watch_and_download} loading="lazy" />
-          </StoryCardsAnimationPane>
-        </StoryCardsAnimationSubItem>
-      </StoryCardsAnimationItem>
-
-      <StoryCardsAnimationItem>
-        <StoryCardsAnimationSubItem direction="row-reverse">
-          <StoryCardsAnimationPane>
-            <StoryCardsAnimationTitle>
-              Watch everywhere.
-            </StoryCardsAnimationTitle>
-            <StoryCardsAnimationSubTitle>
-              Stream unlimited movies and TV shows on your phone, tablet,
-              laptop, and TV without paying more.
-            </StoryCardsAnimationSubTitle>
-          </StoryCardsAnimationPane>
-          <StoryCardsAnimationPane>
-            <StoryCardsAnimationImage src={watch_on_drive} loading="lazy" />
-          </StoryCardsAnimationPane>
-        </StoryCardsAnimationSubItem>
-      </StoryCardsAnimationItem>
-
-      <StoryCardsAnimationItem>
-        <StoryCardsAnimationSubItem direction="row-reverse">
-          <StoryCardsAnimationPane>
-            <StoryCardsAnimationTitle>
-              Create profiles for kids.
-            </StoryCardsAnimationTitle>
-            <StoryCardsAnimationSubTitle>
-              Send kids on adventures with their favorite characters in a space
-              made just for them—free with your membership.
-            </StoryCardsAnimationSubTitle>
-          </StoryCardsAnimationPane>
-          <StoryCardsAnimationPane>
-            <StoryCardsAnimationImage src={kids} loading="lazy" />
-          </StoryCardsAnimationPane>
-        </StoryCardsAnimationSubItem>
-      </StoryCardsAnimationItem>
+      {
+        data.map((d, index) => {
+          return (
+            <StoryCardsAnimationItem>
+              <StoryCardsAnimationSubItem direction={d.direction}>
+                <StoryCardsAnimationPane>
+                  <StoryCardsAnimationTitle>
+                    {d.title}
+                  </StoryCardsAnimationTitle>
+                  <StoryCardsAnimationSubTitle>
+                    {d.subtitle}
+                  </StoryCardsAnimationSubTitle>
+                </StoryCardsAnimationPane>
+                <StoryCardsAnimationPane>
+                  <StoryCardsAnimationImage src={d.image} loading="lazy" />
+                </StoryCardsAnimationPane>
+              </StoryCardsAnimationSubItem>
+            </StoryCardsAnimationItem>
+          );
+        })
+      }
     </StoryCardsAnimationStyled>
   );
 }

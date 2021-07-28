@@ -29,7 +29,7 @@ const Header = () => {
           <DropDown>
             <DropDownVisible>
               <FontAwesomeIcon icon={faGlobe} style={{ color: "#ffffff" }} />
-              <span style={{ marginLeft: ".2em", color: "#ffffff" }}>
+              <span style={{ marginLeft: ".2em", color: "#ffffff", fontSize: '.9em' }}>
                 English
               </span>
               <FontAwesomeIcon
@@ -37,7 +37,8 @@ const Header = () => {
                 style={{
                   transform: "translateY(-.25em)",
                   color: "#ffffff",
-                  margin: "0 .5em",
+                  marginLeft: ".5em",
+                  fontSize: '.9em'
                 }}
               />
             </DropDownVisible>
